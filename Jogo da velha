@@ -1,0 +1,74 @@
+<html>
+<head>
+<title>jogo da velha</title>
+</head>
+
+<body>
+<script language="Javascript">
+  var lugar, i;
+  lugar = new Array();
+  for(i=0; i<9; i++)
+  {
+      lugar[i] = false;
+  }
+
+  function reservar(qual)  
+  {
+      if (lugar[qual])
+      {
+          alert("Este lugar já está ocupado");
+      }
+      else
+      {
+          lugar[qual] = true;
+          document.getElementById("b" + qual).setAttribute("value","X");
+          //alert("Reserva efetuada com sucesso");
+      }
+  }
+</script>
+</head>
+
+<body>
+    <table border='1'>
+    <form name="frm">
+        <script language="Javascript">
+var meuArray, x, lin, col;
+
+meuArray = new Array(3);
+
+for(x = 0; x < meuArray.length; ++x)
+{
+    meuArray[x] = new Array(3);
+}
+meuArray[0][0] = "1";
+meuArray[0][1] = "2";
+meuArray[0][2] = "3";
+meuArray[1][0] = "4";
+meuArray[1][1] = "5";
+meuArray[1][2] = "6";
+meuArray[2][0] = "7";
+meuArray[2][1] = "8";
+meuArray[2][2] = "9";
+
+document.write("<table border='1'>");
+    var i,j;
+        for(i = 0; i<3; i++)
+        { 
+            document.write("</tr>");
+         
+            for(j = 0; j<3; j++)
+            {
+
+           document.write("<td align='center'>");
+            document.write("<input type='button' id='b" + i + j+"' value='.' + onclick='reservar(" + i + j +");'>");
+            document.write("</td>");
+          }
+        }
+        document.write("</tr>");
+        
+document.write("</table>");
+
+</script>
+    </form>
+</body>
+</html>
